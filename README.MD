@@ -23,5 +23,6 @@ mkdir -p /dicoms
 
 docker pull yinglilu/dcmtk_pacs
 
-docker run -d --restart=always --log-driver syslog -p 11112:11112 -v /dicoms:/dicoms yinglilu/dcmtk_pacs
+docker run -d --restart=unless-stopped --log-driver syslog --log-opt tag="dcmtk-storescp" -p 11112:11112 -v /dicoms:/dicoms yinglilu/dcmtk_pacs:0.1
+
 ```
